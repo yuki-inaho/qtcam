@@ -20,7 +20,7 @@
  */
 
 #include "see3cam_cu20.h"
-
+#include <iostream>
 
 /**
  * @brief See3CAM_CU20::setSensorMode - setting sensor mode
@@ -460,6 +460,7 @@ bool See3CAM_CU20::setROIAutoExposure(uint see3camAeROIMode, uint vidResolnWidth
     double inputYLow = 0;
     double inputYHigh = vidResolnHeight-1;
     double inputYCord = yCord;
+    std::cout << "inputXHigh: " << inputXHigh << " inputYHigh: " << inputYHigh << " inputXCord: "  << inputXCord << " inputYCord: " << inputYCord << std::endl;
     int outputYCord = ((inputYCord - inputYLow) / (inputYHigh - inputYLow)) * (outputHigh - outputLow) + outputLow;
 
     //Initialize buffers
